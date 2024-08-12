@@ -10,7 +10,23 @@ Introduction:[Write an introduction about meditation.]</code></p><p class="leadi
 Benefits:</code></p><p class="leading-loose"><code class="font-mono px-1 py-2 mx-1 bg-gray-100 rounded text-sm">1. [Benefit 1]</code></p><p class="leading-loose"><code class="font-mono px-1 py-2 mx-1 bg-gray-100 rounded text-sm">2. [Benefit 2]</code></p><p class="leading-loose"><code class="font-mono px-1 py-2 mx-1 bg-gray-100 rounded text-sm">3. [Benefit 3]</code></p><p class="leading-loose"><code class="font-mono px-1 py-2 mx-1 bg-gray-100 rounded text-sm">
 Conclusion:[Write a conclusion about the benefits of meditation.]</code></p><p class="leading-loose"><code class="font-mono px-1 py-2 mx-1 bg-gray-100 rounded text-sm">inputs = tokenizer.encode(test_intro_prompt_3, return_tensors=&quot;pt&quot;, truncation=True, max_length=2000).to(device)
 
-outputs = model.generate(        inputs,        max_new_tokens=300,        temperature=0.2,        top_p=0.95,        do_sample=True    )print(tokenizer.decode(outputs[0]))</code></p><p class="leading-loose">Now save this as a .py file and run it on your terminal:</p><p class="leading-loose"><code class="font-mono px-1 py-2 mx-1 bg-gray-100 rounded text-sm">(llm_env) (base) ... personal LLM % python smol.py    </code></p><p class="leading-loose">And then wait. If you do this the first time, it will download the model on your machine. There you go! Your first personal LLM is alive:</p><blockquote class="border-l-4 border-brand-primary bg-gray-50 p-3 rounded font-bold my-6">&quot;<!-- -->Write an article about the benefits of meditation.<!-- -->&quot;</blockquote><p class="leading-loose">Not too bad! Warning: clear up your RAM. If there is not enough RAM, the output will suffer!</p><p class="leading-loose">OK. Now lets&#x27; try to write a problem sheet doc, which is how you usually start to explore the problem space for a product. This is something ChatGPT and Claude can do well, but the point is to be able to do it offline! </p><h2 class="text-3xl sm:text-4xl text-left font-black text-gray-700 leading-tight mb-2">Seasoning</h2><p class="leading-loose"><b class="font-bold">One-shot prompt a): </b>&quot;You are an expert product manager. Write a problem statement doc for Lunar Logistics, which specialises in Earth to Moon transport, which describes their new asteroid mining business arm.&quot;</p><p class="leading-loose"><u class="underline"><i class="font-italic">Warning: </i></u></p><p class="leading-loose"><u class="underline"><i class="font-italic">This is a friendly reminder - the current text generation call will exceed the model&#x27;s predefined maximum length (2048). Depending on the model, you may observe exceptions, performance degradation, or nothing at all.</i></u></p><p class="leading-loose">At this point I realised hat the max output of 3000 tokens wouldn&#x27;t do any good. I reduced it: <code class="font-mono px-1 py-2 mx-1 bg-gray-100 rounded text-sm">max_new_tokens=1500.</code> This should help, and allows for 500 tokens of input. I still waited to get the results of the previous settings below:</p><p class="leading-loose"><b class="font-bold">Output a):</b> </p><blockquote class="border-l-4 border-brand-primary bg-gray-50 p-3 rounded font-bold my-6">&quot;<!-- -->The problem statement is:
+outputs = model.generate(        inputs,        max_new_tokens=300,        temperature=0.2,        top_p=0.95,        do_sample=True    )print(tokenizer.decode(outputs[0]))</code></p><p class="leading-loose">Now save this as a .py file and run it on your terminal:</p><p class="leading-loose"><code class="font-mono px-1 py-2 mx-1 bg-gray-100 rounded text-sm">(llm_env) (base) ... personal LLM % python smol.py    </code></p><p class="leading-loose">And then wait. If you do this the first time, it will download the model on your machine. There you go! Your first personal LLM is alive:</p><p class="leading-loose"><i class="font-italic"><u class="underline">Write an article about the benefits of meditation.</u></i></p><p class="leading-loose"><i class="font-italic"><u class="underline">Introduction:
+[Write an introduction about meditation.]</u></i></p><p class="leading-loose"><i class="font-italic"><u class="underline">Benefits:
+1. [Benefit 1]
+2. [Benefit 2]
+3. [Benefit 3]</u></i></p><p class="leading-loose"><i class="font-italic"><u class="underline">Conclusion:
+[Write a conclusion about the benefits of meditation.]</u></i></p><p class="leading-loose"><i class="font-italic"><u class="underline">Section 2: Types of Meditation</u></i></p><p class="leading-loose"><i class="font-italic"><u class="underline">There are many different types of meditation, each with its own unique benefits. Some popular forms include:</u></i></p><p class="leading-loose"><i class="font-italic"><u class="underline">* Mindfulness meditation: This type of meditation focuses on being fully present in the moment and observing your thoughts and feelings without judgment. It can help reduce stress and anxiety.
+* Loving-kindness meditation: This form of meditation involves cultivating feelings of love, kindness, and compassion towards oneself and others. It can help improve relationships and increase empathy.
+* Transcendental meditation: This type of meditation involves repeating a mantra (a word or phrase) silently to oneself. It can help reduce stress and promote relaxation.</u></i></p><p class="leading-loose"><i class="font-italic"><u class="underline">Section 3: How to Practice Meditation</u></i></p><p class="leading-loose"><i class="font-italic"><u class="underline">Here are some tips for practicing meditation:</u></i></p><p class="leading-loose"><i class="font-italic"><u class="underline">1. Find a quiet and comfortable place to sit or lie down.
+2. Close your eyes and take a few deep breaths.
+3. Focus your attention on your breath. Notice the sensation of the air entering and leaving your nostrils.
+4. When your mind wanders, gently bring your attention back to your breath.
+5. Start with just a few minutes per day and gradually increase the time as you become more comfortable with the practice.</u></i></p><p class="leading-loose"><i class="font-italic"><u class="underline">Section 4: Benefits of Meditation</u></i></p><p class="leading-loose"><i class="font-italic"><u class="underline">Meditation has been shown to have numerous benefits, including:</u></i></p><p class="leading-loose"><i class="font-italic"><u class="underline">* Reduced stress and anxiety
+* Improved focus and concentration
+* Increased self-awareness and emotional regulation
+* Better sleep quality
+* Enhanced immune system function
+* Greater sense of inner peace and happiness</u></i></p><p class="leading-loose"><i class="font-italic"><u class="underline">Conclusion:</u></i></p><p class="leading-loose"><i class="font-italic"><u class="underline">Meditation is a powerful tool for promoting mental and physical health. By incorporating meditation into your daily routine, you can experience the many benefits it has to offer. So why not give it a try? You might be surprised at how much it can do for you!&lt;|endoftext|&gt;</u></i></p><p class="leading-loose">Not too bad! Warning: clear up your RAM. If there is not enough RAM, the output will suffer!</p><p class="leading-loose">OK. Now lets&#x27; try to write a problem sheet doc, which is how you usually start to explore the problem space for a product. This is something ChatGPT and Claude can do well, but the point is to be able to do it offline! </p><h2 class="text-3xl sm:text-4xl text-left font-black text-gray-700 leading-tight mb-2">Seasoning</h2><p class="leading-loose"><b class="font-bold">One-shot prompt a): </b>&quot;You are an expert product manager. Write a problem statement doc for Lunar Logistics, which specialises in Earth to Moon transport, which describes their new asteroid mining business arm.&quot;</p><p class="leading-loose"><u class="underline"><i class="font-italic">Warning: </i></u></p><p class="leading-loose"><u class="underline"><i class="font-italic">This is a friendly reminder - the current text generation call will exceed the model&#x27;s predefined maximum length (2048). Depending on the model, you may observe exceptions, performance degradation, or nothing at all.</i></u></p><p class="leading-loose">At this point I realised hat the max output of 3000 tokens wouldn&#x27;t do any good. I reduced it: <code class="font-mono px-1 py-2 mx-1 bg-gray-100 rounded text-sm">max_new_tokens=1500.</code> This should help, and allows for 500 tokens of input. I still waited to get the results of the previous settings below:</p><p class="leading-loose"><b class="font-bold">Output a):</b> </p><p class="leading-loose"><i class="font-italic"><u class="underline">The problem statement is:
 The Moon is a natural resource that can be mined for use on Earth.
 The Moon is a natural resource that can be mined for use on Earth.
 The Moon is a natural resource that can be mined for use on Earth.
@@ -160,7 +176,203 @@ The Moon
 The Moon is a Moon
 The Moon
 The Moon
-The Moon<!-- -->&quot;</blockquote><p class="leading-loose">This took maybe 15 minutes to run. Quite inefficient and disappointing, if not weirdly beautiful. </p><p class="leading-loose">Let&#x27;s try <b class="font-bold">prompt a)</b> again with more conservative token limits:</p><blockquote class="border-l-4 border-brand-primary bg-gray-50 p-3 rounded font-bold my-6">&quot;<!-- -->The problem statement should include the following:
+The Moon</u></i></p><p class="leading-loose"><i class="font-italic"><u class="underline">The Moon</u></i></p><p class="leading-loose"><i class="font-italic"><u class="underline">The Moon</u></i></p><p class="leading-loose"><i class="font-italic"><u class="underline">The Moon</u></i></p><p class="leading-loose"><i class="font-italic"><u class="underline">Moon</u></i></p><p class="leading-loose"><i class="font-italic"><u class="underline">The Moon
+The Moon
+The Moon
+The Moon
+The Moon
+The Moon
+The Moon
+The Moon
+The Moon
+The Moon</u></i></p><p class="leading-loose"><i class="font-italic"><u class="underline">The Moon
+The Moon
+The Moon
+The Moon
+The Moon
+The Moon
+The Moon
+The Moon
+The Moon
+The Moon The Moon
+The Moon
+The Moon
+The Moon
+The Moon
+The Moon
+The Moon
+The Moon
+The Moon
+The Moon
+The Moon
+The Moon
+The Moon
+The Moon
+The Moon
+The Moon
+The Moon
+The Moon
+The Moon
+The Moon
+The Moon
+The Moon
+The Moon
+The Moon
+The Moon
+The Moon
+The Moon
+The Moon
+The Moon
+The Moon
+The Moon
+The Moon
+The Moon
+The Moon
+The Moon
+The Moon
+The Moon
+The Moon
+The Moon
+The Moon
+The Moon
+The Moon
+The Moon
+The Moon
+The Moon
+The Moon
+The Moon
+The Moon
+The Moon
+The Moon
+The Moon
+The Moon
+The Moon
+The Moon
+The Moon
+The Moon</u></i></p><p class="leading-loose"><i class="font-italic"><u class="underline">The Moon
+The Moon
+The Moon
+The Moon
+The Moon
+The Moon
+The Moon
+The Moon
+The Moon
+The Moon
+The Moon
+The Moon
+The Moon
+The Moon
+The Moon
+The Moon
+The Moon</u></i></p><p class="leading-loose"><i class="font-italic"><u class="underline">The Moon
+The Moon
+The Moon
+The Moon
+The Moon
+The Moon
+The Moon
+The Moon
+Moon
+Moon
+The Moon</u></i></p><p class="leading-loose"><i class="font-italic"><u class="underline">The Moon
+Moon
+Moon
+Moon
+Moon
+Moon
+The Moon
+The Moon
+Moon
+Moon MoonMoon
+Moon
+Moon
+Moon
+Moon
+Moon
+Moon
+Moon
+The Moon
+The Moon
+The Moon
+The Moon
+The Moon
+Moon
+The Moon
+The MoonMoon
+The Moon
+The Moon
+The Moon
+The Moon</u></i></p><p class="leading-loose"><i class="font-italic"><u class="underline">
+The Moon</u></i></p><p class="leading-loose"><i class="font-italic"><u class="underline">The Moon
+The Moon
+The Moon</u></i></p><p class="leading-loose"><i class="font-italic"><u class="underline">
+The Moon</u></i></p><p class="leading-loose"><i class="font-italic"><u class="underline">
+The Moon
+The Moon</u></i></p><p class="leading-loose"><i class="font-italic"><u class="underline">
+Moon</u></i></p><p class="leading-loose"><i class="font-italic"><u class="underline">The Moon
+The Moon</u></i></p><p class="leading-loose"><i class="font-italic"><u class="underline">The Moon</u></i></p><p class="leading-loose"><i class="font-italic"><u class="underline">The Moon</u></i></p><p class="leading-loose"><i class="font-italic"><u class="underline">
+The Moon
+The Moon
+The Moon
+The Moon
+The Moon
+The Moon
+The Moon
+The Moon
+The Moon</u></i></p><p class="leading-loose"><i class="font-italic"><u class="underline">Moon
+Moon
+The MoonMoon
+The Moon
+Moon
+The Moon
+Moon
+The Moon
+The Moon
+The Moon
+The Moon
+The Moon
+Moon
+The MoonMoon
+The Moon
+The Moon
+The Moon</u></i></p><p class="leading-loose"><i class="font-italic"><u class="underline">The Moon</u></i></p><p class="leading-loose"><i class="font-italic"><u class="underline">The Moon
+The Moon
+The MoonMoon
+The MoonMoon
+The Moon
+The Moon
+The Moon</u></i></p><p class="leading-loose"><i class="font-italic"><u class="underline">The Moon
+The MoonMoon
+The MoonMoon</u></i></p><p class="leading-loose"><i class="font-italic"><u class="underline">The Moon
+The Moon
+The MoonMoonMoon
+The MoonMoonMoon
+The Moon
+The Moon
+The MoonMoon
+The MoonMoon
+TheMoon
+The Moon
+The Moon
+The MoonMoon
+The MoonMoon
+TheMoon
+The Moon
+The Moon
+TheMoon
+The MoonMoon
+TheMoonMoon
+TheMoon
+TheMoonMoonMoon
+Moon
+Moon
+Moon
+TheMoonMoonMoon
+TheMoonMoonMoonMoonMoonMoonMoon
+The Moon
+TheMoonMoon
+TheMoonMoonMoon</u></i></p><p class="leading-loose"><i class="font-italic"><u class="underline">MoonMoon</u></i></p><p class="leading-loose">This took maybe 15 minutes to run. Quite inefficient and disappointing, if not weirdly beautiful. </p><p class="leading-loose">Let&#x27;s try <b class="font-bold">prompt a)</b> again with more conservative token limits:</p><p class="leading-loose"><i class="font-italic"><u class="underline">The problem statement should include the following:
 - The company’s mission statement
 - The company’s vision
 - The company’s values
@@ -347,7 +559,7 @@ The Moon<!-- -->&quot;</blockquote><p class="leading-loose">This took maybe 15 m
 - The company’s competitive advantage
 - The company’s competitive advantage
 - The company’s competitive advantage
-- The company’s competitive advantage<!-- -->&quot;</blockquote><p class="leading-loose"><b class="font-bold">prompt a) with stricter response length - 300 tokens, temperature as 0.6 and top_p as 0.92 </b>- this should help reduce output time and repetitiveness. </p><blockquote class="border-l-4 border-brand-primary bg-gray-50 p-3 rounded font-bold my-6">&quot;<!-- -->The company is developing a lunar mining robot called the “Titanic”. The robot is designed to
+- The company’s competitive advantage</u></i></p><p class="leading-loose"><b class="font-bold">prompt a) with stricter response length - 300 tokens, temperature as 0.6 and top_p as 0.92 </b>- this should help reduce output time and repetitiveness. </p><blockquote class="border-l-4 border-brand-primary bg-gray-50 p-3 rounded font-bold my-6">&quot;<!-- -->The company is developing a lunar mining robot called the “Titanic”. The robot is designed to
 retrieve precious metals from the Moon’s surface.
 You are to write a problem statement doc for the Titanic, including:
 a) What are the key requirements for the robot’s design?
